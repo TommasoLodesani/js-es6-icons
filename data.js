@@ -122,17 +122,22 @@ for(let i = 0; i < arrayIcon.length; i++){
 	let arrayElement = arrayIcon[i];
 
 	const elementIconContainer = document.createElement("div");
-	elementIconContainer.className = "icon-container";
+	elementIconContainer.className = `icon-container`;
+
+	// const elementSpan = document.createElement("span");
+	// elementSpan.className = ;
 
 	const elementIcon = document.createElement("i");
 	elementIcon.className = `${arrayElement.family} ${arrayElement.prefix}${arrayElement.name}`;
-
+	elementIcon.style.color = arrayElement.color;
 	const elementCaption = document.createElement("h4");
 	elementCaption.innerHTML += arrayElement.name;
 
 
 	myContainer.append(elementIconContainer);
 	elementIconContainer.append(elementIcon);
+	// elementSpan.append(elementIcon);
+
 	elementIconContainer.append(elementCaption);
 	
 }
