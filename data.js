@@ -127,6 +127,12 @@ for(let i = 0; i < arrayIcon.length; i++){
 	const elementIcon = document.createElement("i");
 	elementIcon.className = `${arrayElement.family} ${arrayElement.prefix}${arrayElement.name}`;
 
-	elementIconContainer.append(elementIcon);
+	const elementCaption = document.createElement("h4");
+	elementCaption.innerHTML += arrayElement.name;
+
+
 	myContainer.append(elementIconContainer);
+	elementIconContainer.append(elementIcon);
+	elementIconContainer.append(elementCaption);
+	
 }
