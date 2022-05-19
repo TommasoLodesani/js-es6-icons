@@ -1,4 +1,8 @@
-[
+const myContainer = document.getElementById("container");
+
+
+const arrayIcon = [
+	
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -112,3 +116,17 @@
 		color: 'blue'
 	}
 ];
+
+for(let i = 0; i < arrayIcon.length; i++){
+
+	let arrayElement = arrayIcon[i];
+
+	const elementIconContainer = document.createElement("div");
+	elementIconContainer.className = "icon-container";
+
+	const elementIcon = document.createElement("i");
+	elementIcon.className = `${arrayElement.family} ${arrayElement.prefix}${arrayElement.name}`;
+
+	elementIconContainer.append(elementIcon);
+	myContainer.append(elementIconContainer);
+}
