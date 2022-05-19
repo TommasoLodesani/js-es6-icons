@@ -2,7 +2,7 @@ const myContainer = document.getElementById("container");
 
 
 const arrayIcon = [
-	
+
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -117,27 +117,64 @@ const arrayIcon = [
 	}
 ];
 
-for(let i = 0; i < arrayIcon.length; i++){
+for (let i = 0; i < arrayIcon.length; i++) {
 
 	let arrayElement = arrayIcon[i];
 
 	const elementIconContainer = document.createElement("div");
 	elementIconContainer.className = `icon-container`;
 
-	// const elementSpan = document.createElement("span");
-	// elementSpan.className = ;
+
 
 	const elementIcon = document.createElement("i");
 	elementIcon.className = `${arrayElement.family} ${arrayElement.prefix}${arrayElement.name}`;
 	elementIcon.style.color = arrayElement.color;
+
+
 	const elementCaption = document.createElement("h4");
 	elementCaption.innerHTML += arrayElement.name;
 
 
 	myContainer.append(elementIconContainer);
 	elementIconContainer.append(elementIcon);
-	// elementSpan.append(elementIcon);
+
 
 	elementIconContainer.append(elementCaption);
-	
+
 }
+
+// filtro array in base al type
+
+
+const arrAnimals = arrayIcon.filter(function (index) {
+
+	return index.type === "animal";
+})
+
+console.log(arrAnimals);
+
+const arrVeggie = arrayIcon.filter(function (index) {
+
+	return index.type === "vegetable";
+})
+
+console.log(arrVeggie);
+
+
+const arrUser = arrayIcon.filter(function (index) {
+
+	return index.type === "user";
+})
+
+console.log(arrUser);
+
+
+// creo select con le varie option
+
+const mySelect = document.getElementById("button-select");
+
+
+mySelect.addEventListener('change', (event) => {
+	const result = document.querySelector('.icon-container');
+	result.textContent = `${event.target.arrUser}`;
+});
