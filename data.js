@@ -134,7 +134,8 @@ function genereIcona(array){
 	
 	
 		const elementIcon = document.createElement("i");
-		elementIcon.className = `${arrayElement.family} ${arrayElement.prefix}${arrayElement.name}`;
+		elementIcon.classList.add(arrayElement.family);
+		elementIcon.classList.add(arrayElement.prefix + arrayElement.name);
 		elementIcon.style.color = arrayElement.color;
 	
 	
